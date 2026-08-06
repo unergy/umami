@@ -3,7 +3,7 @@ services:
   umami:
     image: ghcr.io/umami-software/umami:latest
     ports:
-      - "3055:3000"
+      - "${APP_PORT:-3055}:3000"
     env_file: .env
     init: true
     restart: always
