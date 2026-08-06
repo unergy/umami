@@ -4,9 +4,7 @@ services:
     image: ghcr.io/umami-software/umami:latest
     ports:
       - "3055:3000"
-    environment:
-      DATABASE_URL: postgresql://umami:umami@db:5432/umami
-      APP_SECRET: replace-me-with-a-random-string
+    env_file: .env
     init: true
     restart: always
     healthcheck:
