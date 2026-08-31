@@ -17,6 +17,8 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
   db:
     image: postgres:15-alpine
     environment:
@@ -31,5 +33,7 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 volumes:
   umami-db-data:
